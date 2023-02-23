@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');   //to use all functionalites of ejs
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));  //to access all static files //////ike Html and class
 
-mongoose.connect('mongodb://127.0.0.1:27017/interview_latestDB',{useNewUrlParser:true});    //  to create connection of //app to   local server
+mongoose.connect('mongodb+srv://admin-akash:Test123@cluster0.hfln0j2.mongodb.net/interviewDB?retryWrites=true&w=majority',{useNewUrlParser:true});    //  to create connection of //app to   local server
 
 const userSchema = new mongoose.Schema({
   name:String,
@@ -53,9 +53,9 @@ app.post("/create",function(req,res){    //
           console.log("User Saved Successfully");
           res.redirect("/list");
         }
-      })
+      });
     }
-  })
+  });
 
 });
 
